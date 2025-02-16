@@ -20,9 +20,5 @@ readline.question("Введите целое положительное числ
         const numberThree = String(number) + String(number) + String(number)
         console.log("Результат:", numberOne + Number(numberTwo) + Number(numberThree))
     }
-
-    else if (typeof number !== 'number') {
-        console.log("Неверный ввод. Принимаются только целые числа от 1 до 9.");
-    }
     readline.close();
 });
