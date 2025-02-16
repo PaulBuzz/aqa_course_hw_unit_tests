@@ -7,8 +7,8 @@
 
 */
 
-let minAge = 18;
-let maxAge = 60;
+let minAge = 18
+let maxAge = 60
 
 function checkAge(age) {
   if (typeof age === "string" && /^\d+$/.test(age)) {
