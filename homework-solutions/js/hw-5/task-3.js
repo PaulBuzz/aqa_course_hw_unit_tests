@@ -3,22 +3,32 @@
  * Переменная `word` уже создана и содержит строку со словом.
  * Ожидаемый результат для `hello`: "hello contains 2 vowels and 3 consonants".
  */
-const word = 'hello'
-const vowelsList = ['a', 'e', 'i', 'o', 'u', 'y']
-const cleanWord = word.replace(/-/g, '')
+function countVowelsAndConsonants(word) {
+    const vowelsList = ['a', 'e', 'i', 'o', 'u', 'y'];
+    const consonantsList = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
+        'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
 
-let vowelsAndConsonantsResult = ''
-let vowels = 0
-let consonants = 0
+    const cleanWord = word.replace(/-/g, '');
 
-for (let i = 0; i < cleanWord.length; i++) {
-    if (vowelsList.includes(cleanWord[i])) {
-        vowels++;
-    } else {
-        consonants++
+    let vowels = 0;
+    let consonants = 0;
+
+    for (let i = 0; i < cleanWord.length; i++) {
+        const char = cleanWord[i].toLowerCase();
+
+        if (vowelsList.includes(char)) {
+            vowels++;
+        } else if (consonantsList.includes(char)) {
+            consonants++;
+        }
     }
+
+    const vowelsAndConsonantsResult = `${word} contains ${vowels} vowels and ${consonants} consonants`;
+
+    return vowelsAndConsonantsResult;
 }
 
-vowelsAndConsonantsResult = `${word} contains ${vowels} vowels and ${consonants} consonants`
+const word = 'hello';
+const vowelsAndConsonantsResult = countVowelsAndConsonants(word);
 
-export { vowelsAndConsonantsResult }
+export { vowelsAndConsonantsResult };
