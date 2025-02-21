@@ -13,7 +13,20 @@
   const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 */
 
-let resultUnique;
-let resultNull;
+const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
+const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
+const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
+
+function findUniquePizzas(myPizzas, competitorPizzas) {
+  const competitorPizzasLower = competitorPizzas.map(pizza => pizza.toLowerCase());
+  const uniquePizzas = myPizzas.filter(pizza =>
+    !competitorPizzasLower.includes(pizza.toLowerCase())
+  );
+
+  return uniquePizzas.length > 0 ? uniquePizzas : null;
+}
+
+let resultUnique = findUniquePizzas(myPizzasT1, competitorPizzas);
+let resultNull = findUniquePizzas(myPizzasT2, competitorPizzas);
 
 export { resultNull, resultUnique };
