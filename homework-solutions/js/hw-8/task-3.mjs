@@ -7,7 +7,16 @@
 */
 
 function findMissingNumber(numbers) {
-  // Ваш код
+  const maxNumber = Math.max(...numbers);
+  const sumOfArray = numbers.reduce((sum, num) => sum + num, 0);
+  const expectedSum = (maxNumber * (maxNumber + 1)) / 2;
+
+  if (sumOfArray === expectedSum) {
+    return maxNumber + 1;
+  }
+
+
+  return expectedSum - sumOfArray;
 }
 
 export { findMissingNumber };

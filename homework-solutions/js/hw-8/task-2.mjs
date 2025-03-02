@@ -19,7 +19,30 @@ const words = [
 ];
 
 function sortedByVowels(wordsArr) {
-  // Ваш код
+  function countVowels(word) {
+    const lowerCaseWord = word.toLowerCase();
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let count = 0;
+
+    for (let i = 0; i < lowerCaseWord.length; i++) {
+      if (vowels.includes(lowerCaseWord[i])) {
+        count++;
+      }
+    }
+
+    return count;
+  }
+
+  const sortedArr = [...wordsArr];
+
+  sortedArr.sort((a, b) => {
+    const vowelsInA = countVowels(a);
+    const vowelsInB = countVowels(b);
+
+    return vowelsInA - vowelsInB;
+  });
+
+  return sortedArr;
 }
 
 export { sortedByVowels };
