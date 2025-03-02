@@ -9,7 +9,18 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  const numStr = Math.abs(number).toString();
+
+  if (numStr.length === 1) {
+    return number;
+  }
+
+  let sum = 0;
+  for (let i = 0; i < numStr.length; i++) {
+    sum += parseInt(numStr[i]);
+  }
+
+  return digitalRoot(sum);
 }
 
 export { digitalRoot };
