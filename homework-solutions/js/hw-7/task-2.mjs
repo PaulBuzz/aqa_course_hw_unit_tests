@@ -8,10 +8,14 @@ function isPalindrom(word) {
     return false;
   }
 
-  const cleanWord = word.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
-  const reversedWord = cleanWord.split('').reverse().join('');
+  const lowerCaseWord = word.toLowerCase();
+  let reversedWord = '';
 
-  return cleanWord === reversedWord;
+  for (let i = lowerCaseWord.length - 1; i >= 0; i--) {
+    reversedWord += lowerCaseWord[i];
+  }
+
+  return lowerCaseWord === reversedWord;
 }
 
 
