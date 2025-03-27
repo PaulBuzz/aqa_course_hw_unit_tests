@@ -133,9 +133,9 @@ class Company {
     }
 
     const fullName = employee.getFullName();
-    const isNameUnique = !this.#employees.some(emp => emp.getFullName() === fullName);
+    const isExist = this.#employees.some(emp => emp.getFullName() === fullName);
 
-    if (!isNameUnique) {
+    if (isExist) {
       throw new Error(`Employee with name "${fullName}" already exists in the company`);
     }
 
