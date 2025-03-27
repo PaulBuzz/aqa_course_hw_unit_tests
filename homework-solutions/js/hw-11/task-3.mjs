@@ -77,10 +77,11 @@ class Manager extends Employee {
 class Designer extends Employee {
   constructor(firstName, lastName, salary, designTools = []) {
     super(firstName, lastName, salary);
-    this.designTools = designTools;
 
-    if (designTools === 'Photoshop') {
-      this.designTools = ['Photoshop'];
+    if (typeof designTools === 'string') {
+      this.designTools = [designTools];
+    } else {
+      this.designTools = designTools;
     }
   }
 
