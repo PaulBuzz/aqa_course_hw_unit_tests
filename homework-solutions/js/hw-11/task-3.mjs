@@ -69,8 +69,8 @@ class Manager extends Employee {
     this.teamSize = teamSize;
   }
 
-  increaseTeamSize() {
-    this.teamSize += 1;
+  increaseTeamSize(amount) {
+      this.teamSize += amount;
   }
 }
 
